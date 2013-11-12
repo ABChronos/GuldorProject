@@ -40,6 +40,51 @@ public interface MeanFactory extends EFactory
   Application createApplication();
 
   /**
+   * Returns a new object of class '<em>Server</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Server</em>'.
+   * @generated
+   */
+  Server createServer();
+
+  /**
+   * Returns a new object of class '<em>Module</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Module</em>'.
+   * @generated
+   */
+  Module createModule();
+
+  /**
+   * Returns a new object of class '<em>Entity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity</em>'.
+   * @generated
+   */
+  Entity createEntity();
+
+  /**
+   * Returns a new object of class '<em>Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Property</em>'.
+   * @generated
+   */
+  Property createProperty();
+
+  /**
+   * Returns a new object of class '<em>View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>View</em>'.
+   * @generated
+   */
+  View createView();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

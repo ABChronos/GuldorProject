@@ -73,6 +73,11 @@ public class MeanFactoryImpl extends EFactoryImpl implements MeanFactory
     switch (eClass.getClassifierID())
     {
       case MeanPackage.APPLICATION: return createApplication();
+      case MeanPackage.SERVER: return createServer();
+      case MeanPackage.MODULE: return createModule();
+      case MeanPackage.ENTITY: return createEntity();
+      case MeanPackage.PROPERTY: return createProperty();
+      case MeanPackage.VIEW: return createView();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -87,6 +92,61 @@ public class MeanFactoryImpl extends EFactoryImpl implements MeanFactory
   {
     ApplicationImpl application = new ApplicationImpl();
     return application;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Server createServer()
+  {
+    ServerImpl server = new ServerImpl();
+    return server;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Module createModule()
+  {
+    ModuleImpl module = new ModuleImpl();
+    return module;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Entity createEntity()
+  {
+    EntityImpl entity = new EntityImpl();
+    return entity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Property createProperty()
+  {
+    PropertyImpl property = new PropertyImpl();
+    return property;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View createView()
+  {
+    ViewImpl view = new ViewImpl();
+    return view;
   }
 
   /**

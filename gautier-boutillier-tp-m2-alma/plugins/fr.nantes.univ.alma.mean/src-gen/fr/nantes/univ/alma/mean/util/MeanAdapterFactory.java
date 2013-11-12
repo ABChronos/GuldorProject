@@ -88,6 +88,31 @@ public class MeanAdapterFactory extends AdapterFactoryImpl
         return createApplicationAdapter();
       }
       @Override
+      public Adapter caseServer(Server object)
+      {
+        return createServerAdapter();
+      }
+      @Override
+      public Adapter caseModule(Module object)
+      {
+        return createModuleAdapter();
+      }
+      @Override
+      public Adapter caseEntity(Entity object)
+      {
+        return createEntityAdapter();
+      }
+      @Override
+      public Adapter caseProperty(Property object)
+      {
+        return createPropertyAdapter();
+      }
+      @Override
+      public Adapter caseView(View object)
+      {
+        return createViewAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -120,6 +145,81 @@ public class MeanAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createApplicationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.nantes.univ.alma.mean.Server <em>Server</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.nantes.univ.alma.mean.Server
+   * @generated
+   */
+  public Adapter createServerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.nantes.univ.alma.mean.Module <em>Module</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.nantes.univ.alma.mean.Module
+   * @generated
+   */
+  public Adapter createModuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.nantes.univ.alma.mean.Entity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.nantes.univ.alma.mean.Entity
+   * @generated
+   */
+  public Adapter createEntityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.nantes.univ.alma.mean.Property <em>Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.nantes.univ.alma.mean.Property
+   * @generated
+   */
+  public Adapter createPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.nantes.univ.alma.mean.View <em>View</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.nantes.univ.alma.mean.View
+   * @generated
+   */
+  public Adapter createViewAdapter()
   {
     return null;
   }

@@ -87,6 +87,41 @@ public class MeanSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MeanPackage.SERVER:
+      {
+        Server server = (Server)theEObject;
+        T result = caseServer(server);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MeanPackage.MODULE:
+      {
+        Module module = (Module)theEObject;
+        T result = caseModule(module);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MeanPackage.ENTITY:
+      {
+        Entity entity = (Entity)theEObject;
+        T result = caseEntity(entity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MeanPackage.PROPERTY:
+      {
+        Property property = (Property)theEObject;
+        T result = caseProperty(property);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MeanPackage.VIEW:
+      {
+        View view = (View)theEObject;
+        T result = caseView(view);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -103,6 +138,86 @@ public class MeanSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseApplication(Application object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Server</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Server</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseServer(Server object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModule(Module object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntity(Entity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProperty(Property object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>View</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>View</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseView(View object)
   {
     return null;
   }

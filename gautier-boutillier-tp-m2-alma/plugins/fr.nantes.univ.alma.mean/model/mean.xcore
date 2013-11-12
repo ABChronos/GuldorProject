@@ -14,4 +14,30 @@ package fr.nantes.univ.alma.mean
 
 class Application {
         String name
+        contains Server server
+        contains Module module
+        contains Entity[] entities
+}
+
+class Server {
+	int port
+}
+
+class Module {
+	String name
+	contains View[] views
+}
+
+class Entity {
+	String name
+	contains Property[] properties
+}
+
+class Property {
+	String name
+	String ^type
+}
+
+class View {
+	String name
 }

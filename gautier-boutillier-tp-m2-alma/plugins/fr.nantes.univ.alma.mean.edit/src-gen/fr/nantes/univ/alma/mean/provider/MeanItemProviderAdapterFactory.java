@@ -107,6 +107,131 @@ public class MeanItemProviderAdapterFactory extends MeanAdapterFactory implement
   }
 
   /**
+   * This keeps track of the one adapter used for all {@link fr.nantes.univ.alma.mean.Server} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ServerItemProvider serverItemProvider;
+
+  /**
+   * This creates an adapter for a {@link fr.nantes.univ.alma.mean.Server}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createServerAdapter()
+  {
+    if (serverItemProvider == null)
+    {
+      serverItemProvider = new ServerItemProvider(this);
+    }
+
+    return serverItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link fr.nantes.univ.alma.mean.Module} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ModuleItemProvider moduleItemProvider;
+
+  /**
+   * This creates an adapter for a {@link fr.nantes.univ.alma.mean.Module}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createModuleAdapter()
+  {
+    if (moduleItemProvider == null)
+    {
+      moduleItemProvider = new ModuleItemProvider(this);
+    }
+
+    return moduleItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link fr.nantes.univ.alma.mean.Entity} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected EntityItemProvider entityItemProvider;
+
+  /**
+   * This creates an adapter for a {@link fr.nantes.univ.alma.mean.Entity}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createEntityAdapter()
+  {
+    if (entityItemProvider == null)
+    {
+      entityItemProvider = new EntityItemProvider(this);
+    }
+
+    return entityItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link fr.nantes.univ.alma.mean.Property} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected PropertyItemProvider propertyItemProvider;
+
+  /**
+   * This creates an adapter for a {@link fr.nantes.univ.alma.mean.Property}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createPropertyAdapter()
+  {
+    if (propertyItemProvider == null)
+    {
+      propertyItemProvider = new PropertyItemProvider(this);
+    }
+
+    return propertyItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link fr.nantes.univ.alma.mean.View} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ViewItemProvider viewItemProvider;
+
+  /**
+   * This creates an adapter for a {@link fr.nantes.univ.alma.mean.View}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createViewAdapter()
+  {
+    if (viewItemProvider == null)
+    {
+      viewItemProvider = new ViewItemProvider(this);
+    }
+
+    return viewItemProvider;
+  }
+
+  /**
    * This returns the root adapter factory that contains this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -218,6 +343,11 @@ public class MeanItemProviderAdapterFactory extends MeanAdapterFactory implement
   public void dispose()
   {
     if (applicationItemProvider != null) applicationItemProvider.dispose();
+    if (serverItemProvider != null) serverItemProvider.dispose();
+    if (moduleItemProvider != null) moduleItemProvider.dispose();
+    if (entityItemProvider != null) entityItemProvider.dispose();
+    if (propertyItemProvider != null) propertyItemProvider.dispose();
+    if (viewItemProvider != null) viewItemProvider.dispose();
   }
 
 }

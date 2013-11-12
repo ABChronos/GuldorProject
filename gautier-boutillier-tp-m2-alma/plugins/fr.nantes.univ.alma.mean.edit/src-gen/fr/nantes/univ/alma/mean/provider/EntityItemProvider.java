@@ -11,7 +11,7 @@
 package fr.nantes.univ.alma.mean.provider;
 
 
-import fr.nantes.univ.alma.mean.Application;
+import fr.nantes.univ.alma.mean.Entity;
 import fr.nantes.univ.alma.mean.MeanFactory;
 import fr.nantes.univ.alma.mean.MeanPackage;
 
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -36,12 +37,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.nantes.univ.alma.mean.Application} object.
+ * This is the item provider adapter for a {@link fr.nantes.univ.alma.mean.Entity} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ApplicationItemProvider
+public class EntityItemProvider
   extends ItemProviderAdapter
   implements
     IEditingDomainItemProvider,
@@ -56,7 +57,7 @@ public class ApplicationItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public ApplicationItemProvider(AdapterFactory adapterFactory)
+  public EntityItemProvider(AdapterFactory adapterFactory)
   {
     super(adapterFactory);
   }
@@ -91,9 +92,9 @@ public class ApplicationItemProvider
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Application_name_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Application_name_feature", "_UI_Application_type"),
-         MeanPackage.Literals.APPLICATION__NAME,
+         getString("_UI_Entity_name_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Entity_name_feature", "_UI_Entity_type"),
+         MeanPackage.Literals.ENTITY__NAME,
          true,
          false,
          false,
@@ -116,9 +117,7 @@ public class ApplicationItemProvider
     if (childrenFeatures == null)
     {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(MeanPackage.Literals.APPLICATION__SERVER);
-      childrenFeatures.add(MeanPackage.Literals.APPLICATION__MODULE);
-      childrenFeatures.add(MeanPackage.Literals.APPLICATION__ENTITIES);
+      childrenFeatures.add(MeanPackage.Literals.ENTITY__PROPERTIES);
     }
     return childrenFeatures;
   }
@@ -138,7 +137,7 @@ public class ApplicationItemProvider
   }
 
   /**
-   * This returns Application.gif.
+   * This returns Entity.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -146,7 +145,7 @@ public class ApplicationItemProvider
   @Override
   public Object getImage(Object object)
   {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Application"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Entity"));
   }
 
   /**
@@ -158,10 +157,10 @@ public class ApplicationItemProvider
   @Override
   public String getText(Object object)
   {
-    String label = ((Application)object).getName();
+    String label = ((Entity)object).getName();
     return label == null || label.length() == 0 ?
-      getString("_UI_Application_type") :
-      getString("_UI_Application_type") + " " + label;
+      getString("_UI_Entity_type") :
+      getString("_UI_Entity_type") + " " + label;
   }
 
   /**
@@ -176,14 +175,12 @@ public class ApplicationItemProvider
   {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(Application.class))
+    switch (notification.getFeatureID(Entity.class))
     {
-      case MeanPackage.APPLICATION__NAME:
+      case MeanPackage.ENTITY__NAME:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case MeanPackage.APPLICATION__SERVER:
-      case MeanPackage.APPLICATION__MODULE:
-      case MeanPackage.APPLICATION__ENTITIES:
+      case MeanPackage.ENTITY__PROPERTIES:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -204,18 +201,8 @@ public class ApplicationItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (MeanPackage.Literals.APPLICATION__SERVER,
-         MeanFactory.eINSTANCE.createServer()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (MeanPackage.Literals.APPLICATION__MODULE,
-         MeanFactory.eINSTANCE.createModule()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (MeanPackage.Literals.APPLICATION__ENTITIES,
-         MeanFactory.eINSTANCE.createEntity()));
+        (MeanPackage.Literals.ENTITY__PROPERTIES,
+         MeanFactory.eINSTANCE.createProperty()));
   }
 
   /**
