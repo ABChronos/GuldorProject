@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="nodeServerJsFile" nsURI="fr::nantes::univ::alma::psm::gen::mean::files::nodeServerJsFile" startHeaderPosition="29" endHeaderPosition="97">
+    <input>
+      <takesTypesFrom href="http://www.univ-nantes.fr/alma/MEAN/v1.0#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="genNodeServerJsFile" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'use strict';&#xD;&#xA;&#xD;&#xA;var express = require('express');&#xD;&#xA;var fs = require('fs');&#xD;&#xA;var mongoose = require('mongoose');&#xD;&#xA;var app = module.exports = express();&#xD;&#xA;&#xD;&#xA;// Connect to MongoDB&#xD;&#xA;mongoose.connect('mongodb://localhost/test');&#xD;&#xA;&#xD;&#xA;app.configure(function(){&#xD;&#xA;  app.use(express.compress());&#xD;&#xA;  app.use(express.json());&#xD;&#xA;  app.use(express.urlencoded());&#xD;&#xA;  app.use(express.methodOverride());&#xD;&#xA;  app.use(app.router);&#xD;&#xA;});&#xD;&#xA;&#xD;&#xA;// Load the controllers&#xD;&#xA;var phones = require('./app/controllers/phoneController.js');&#xD;&#xA;&#xD;&#xA;// Routes of the API&#xD;&#xA;app.options('/api/phones', phones.optionsCollection);&#xD;&#xA;app.get('/api/phones', phones.list);&#xD;&#xA;app.options('/api/phones/:phoneId', phones.optionsLiteral);&#xD;&#xA;app.get('/api/phones/:phoneId', phones.show);&#xD;&#xA;&#xD;&#xA;// All the static content will be delivered from this repository&#xD;&#xA;app.use(express.static(__dirname + '/public'));&#xD;&#xA;&#xD;&#xA;// Clear the existing phones&#xD;&#xA;var Phone = require('./app/models/phoneModel.js');&#xD;&#xA;Phone.find(function(err, phones) {&#xD;&#xA;  if (phones.length > 0) {&#xD;&#xA;    var i = 0;&#xD;&#xA;    for (i = 0; i &lt; phones.length; i++) {&#xD;&#xA;      phones"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="i"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".remove();&#xD;&#xA;    }&#xD;&#xA;  }&#xD;&#xA;});&#xD;&#xA;&#xD;&#xA;// Initialize the database with the phones available&#xD;&#xA;fs.readdirSync(__dirname + '/app/Initialize/phone').forEach(function(phoneDataFileName) {&#xD;&#xA;  var aPhoneData = JSON.parse(fs.readFileSync(__dirname + '/app/Initialize/phone/' + phoneDataFileName).toString());  &#xD;&#xA;  new Phone(aPhoneData).save();&#xD;&#xA;});&#xD;&#xA;&#xD;&#xA;app.listen(8080);&#xD;&#xA;console.log(&quot;Express server listening on port 8080&quot;);&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="server.js">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Cp1252">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aServer">
+        <eType xsi:type="ecore:EClass" href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="genNodeServerJsFile">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/genNodeServerJsFile"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aServer">
+          <eType xsi:type="ecore:EClass" href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Server_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.univ-nantes.fr/alma/MEAN/v1.0#//Server"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/genNodeServerJsFile">
+      <details key="start" value="101"/>
+      <details key="end" value="1704"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/genNodeServerJsFile/@body.0">
+      <details key="start" value="158"/>
+      <details key="end" value="1691"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/genNodeServerJsFile/@body.0/@body.0">
+      <details key="start" value="196"/>
+      <details key="end" value="1262"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/genNodeServerJsFile/@body.0/@body.1">
+      <details key="start" value="1263"/>
+      <details key="end" value="1266"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/genNodeServerJsFile/@body.0/@body.2">
+      <details key="start" value="1268"/>
+      <details key="end" value="1269"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/genNodeServerJsFile/@body.0/@body.3">
+      <details key="start" value="1270"/>
+      <details key="end" value="1273"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/genNodeServerJsFile/@body.0/@body.4">
+      <details key="start" value="1275"/>
+      <details key="end" value="1684"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/genNodeServerJsFile/@body.0/@fileUrl">
+      <details key="start" value="165"/>
+      <details key="end" value="176"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/genNodeServerJsFile/@body.0/@charset">
+      <details key="start" value="185"/>
+      <details key="end" value="193"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/genNodeServerJsFile/aServer">
+      <details key="start" value="138"/>
+      <details key="end" value="154"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>
