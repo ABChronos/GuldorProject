@@ -1,0 +1,17 @@
+@Ecore(nsURI="http://www.univ-nantes.fr/alma/MEAN/v1.0", nsPrefix="mean")
+@GenModel(editDirectory="/fr.nantes.univ.alma.mean.edit/src-gen")
+@GenModel(editorDirectory="/fr.nantes.univ.alma.mean.editor/src-gen")
+@GenModel(fileExtensions="mean")
+@GenModel(copyrightText="Copyright (c) 2013 Sciences and Technology University of Nantes.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+    InsertYourNameHere - initial API and implementation")
+package fr.nantes.univ.alma.mean
+
+class Application {
+        String name
+}
